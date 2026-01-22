@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+    font-family: "Roboto Mono", monospace;
+}
+
+body {
+    font-family: "Roboto Mono", monospace;
+    background-color: #111; /* Fallback color */
+    color: #fff;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.wrapper{
+    min-height: 100vh;
+    width: 100%;
+    background-image:linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('../image/background.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.testimonial{
+    padding: 10px 100px;
+}
+
+.profile-container {
+    max-width: 700px;
+    width: 100%;
+}
+
+.hobbies-list, .personal-list {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+.hobbies-list li, .personal-list li {
+    margin: 8px 0;
+    font-size: 18px;
+}
+
+h3 {
+    color: aqua; /* Use aqua as your accent color */
+    text-transform: uppercase;
+    margin-top: 40px;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+
+article h1{
+    font-size: 30px;
+    font-weight: 400;
+    text-transform: uppercase;
+
+}
+
+
+article img{
+    height: 200px;
+    width: 225px;
+    object-fit: cover;
+    border: 0px solid #fff;
+    border-radius: 20%;
+    margin-top: 60px;
+}
+
+
+blockquote{
+    font-family: sans-serif;
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+
+    white-space: nowrap;
+}
+
+article h5{
+    text-transform: uppercase;
+    font-size: 28px;
+    margin-top: 30px;
+    letter-spacing: 1.5px;
+}
+
+article p{
+    font-size: 17px;
+}
+
