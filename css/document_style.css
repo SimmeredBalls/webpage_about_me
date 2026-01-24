@@ -1,0 +1,140 @@
+body {
+    background-color: #e0e0e0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    font-family: "Courier New", monospace;
+}
+
+p {
+    font-size: 18px;
+}
+
+.document-page {
+    display: flex;
+    background-color: #fff;
+    border: 1px solid #bbb;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.5);
+    width: 50%;
+    height: relative;
+    padding: 60px;
+    flex-direction: column;
+}
+
+.document-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 5px;
+    margin-bottom: 25px;
+    border-bottom:#000 3px solid;
+}
+
+.header-title {
+   font-size: 40px;
+   font-weight: bold;
+   letter-spacing: -1px;
+   
+}
+.meta-data {
+    text-align: right;
+    font-family: "Verdana", sans-serif; 
+    font-weight: bold;
+}
+
+.section-1 {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.specimen-image {
+    width: 240px;
+    height: 500px;
+    margin: 0px;
+    border: 2px solid #000;
+    padding: 5px;
+    background: #fff;
+    text-align: center;
+}
+.specimen-image img {
+    width: 100%;
+    filter: grayscale(30%);
+}
+.caption { font-size: 11px; font-style: italic; margin-top: 5px; }
+
+.subject-attributes {
+    width: 60%;
+}
+
+.subject-attributes p {
+    margin: 0px;
+    padding: 0px;
+    font-size: 18px
+}
+
+.profile-title { 
+    font-size: 18px;
+    font-weight: bold; 
+    margin: 0px;
+    padding-bottom: 5px;
+}
+
+.list-style {
+    font-size: 18px;
+    margin-top: 0px;
+    padding-left: 0px;
+    list-style-type: none;
+    text-transform: capitalize;
+}
+
+.list-style li {
+    padding-top: 3px;
+
+}
+
+.title-area {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.redacted { background-color: #000; color: #000; }
+.redacted:hover { background-color: transparent; color: #cc0000; font-weight: bold;}
+
+.highlight { background-color: #EAB126;}
+
+footer {
+    font-family: "Verdana", sans-serif;
+}
+
+.footer-stamp {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 20px;
+    color: black;
+    text-transform: uppercase;
+}
+
+.footer-message {
+    color: black;
+    font-size: 13px;
+    margin: 0;
+    
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    border-top: 3px solid #000;
+}
+
+
+.section-3 p {
+    margin: 0;
+}
+
+.section-3 ul {
+    margin: 0;
+    padding-left: 20px; /* Keep some padding so the bullets show up */
+}
