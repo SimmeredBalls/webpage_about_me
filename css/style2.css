@@ -1,0 +1,197 @@
+/* RESET & BASE */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1a1a1a; /* Dark background outside the paper */
+    display: flex;
+    justify-content: center;
+    padding: 40px 10px;
+    font-family: 'Courier Prime', 'Courier New', monospace;
+    color: #000;
+}
+
+/* THE PAPER DOCUMENT */
+.document-container {
+    background-color: #f4f4f4; /* Off-white paper color */
+    width: min(900px, 100%);
+    padding: 50px 60px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.7);
+    position: relative;
+    overflow: hidden; /* Keeps watermark inside */
+}
+
+/* PAPER TEXTURE OVERLAY */
+.document-container::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* HEADER STYLES */
+.hazard-bar {
+    height: 15px;
+    background: repeating-linear-gradient(
+        45deg,
+        #000,
+        #000 10px,
+        #ffcc00 10px,
+        #ffcc00 20px
+    );
+    margin-bottom: 20px;
+    border: 1px solid #000;
+}
+
+.document-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 1;
+}
+
+.header-left h1 {
+    font-size: 36px;
+    margin: 0;
+    letter-spacing: -1px;
+    text-decoration: underline;
+}
+
+.sub-header {
+    font-size: 14px;
+    letter-spacing: 4px;
+    font-weight: bold;
+}
+
+.classification-box {
+    border: 3px solid #cc0000;
+    color: #cc0000;
+    padding: 5px 10px;
+    text-align: center;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    transform: rotate(-2deg); /* Slight stamp tilt */
+}
+
+/* TYPOGRAPHY & LINES */
+.thick-line { border: 0; border-top: 4px solid #000; margin: 10px 0 25px 0; }
+.thin-line { border: 0; border-top: 1px solid #000; margin: 15px 0; }
+
+h3 {
+    text-transform: uppercase;
+    background: #000;
+    color: #fff;
+    display: inline-block;
+    padding: 2px 8px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+p { font-size: 16px; line-height: 1.5; margin-bottom: 15px; text-align: justify; }
+
+/* DATA BLOCK (Item #) */
+.data-block p { margin: 0; font-size: 18px; }
+
+/* THE IMAGE (FLOATED) */
+.specimen-image {
+    float: right; /* THIS FIXES YOUR ISSUE */
+    width: 300px;
+    margin: 0 0 20px 25px;
+    padding: 10px;
+    background: #fff;
+    border: 2px solid #000;
+    box-shadow: 3px 3px 0px rgba(0,0,0,0.2);
+    position: relative;
+    z-index: 2;
+}
+
+.specimen-image img {
+    width: 100%;
+    display: block;
+    filter: grayscale(100%) contrast(1.2); /* SCP Style photo */
+}
+
+.specimen-image figcaption {
+    font-size: 12px;
+    margin-top: 8px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* DATA TABLE */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    font-size: 15px;
+    border: 1px solid #000;
+}
+
+.data-table td {
+    border: 1px solid #000;
+    padding: 6px 10px;
+}
+
+.data-table .label {
+    background-color: #ddd;
+    font-weight: bold;
+    width: 15%;
+}
+
+/* SPECIAL EFFECTS */
+.highlight { background-color: rgba(255, 255, 0, 0.4); }
+
+.redacted {
+    background-color: #000;
+    color: #000;
+    cursor: help;
+    user-select: none;
+}
+
+.redacted:hover { color: #fff; }
+
+.note {
+    background-color: #e8e8e8;
+    border-left: 4px solid #000;
+    margin: 10px 0;
+    padding: 15px;
+    font-style: italic;
+}
+
+/* WATERMARK */
+.watermark {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    font-size: 120px;
+    color: rgba(0,0,0,0.04);
+    font-weight: bold;
+    pointer-events: none;
+    z-index: 0;
+    white-space: nowrap;
+}
+
+/* FOOTER */
+.footer-warning {
+    text-align: center;
+    font-weight: bold;
+    font-size: 12px;
+    color: #cc0000;
+}
+
+/* RESPONSIVE (Mobile) */
+@media (max-width: 768px) {
+    .document-container { padding: 20px; }
+    .specimen-image {
+        float: none;
+        width: 100%;
+        margin: 0 0 20px 0;
+    }
+    .watermark { font-size: 60px; }
+}

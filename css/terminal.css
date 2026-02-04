@@ -1,0 +1,116 @@
+/* GLOBAL */
+body {
+    margin: 0;
+    background: #050807;
+    font-family: "Courier New", monospace;
+    color: #d6ffd9;
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+}
+
+.terminal {
+    width: min(1100px, 95%);
+    border: 2px solid #1aff6b;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(26,255,107,0.15);
+}
+
+/* HEADER */
+.terminal-header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid #1aff6b;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.status {
+    color: #ffe66d;
+}
+
+/* GRID LAYOUT */
+.grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+}
+
+.panel {
+    border: 1px solid #1aff6b;
+    padding: 15px;
+    background: rgba(0, 20, 10, 0.4);
+}
+
+.panel h2 {
+    margin-top: 0;
+    font-size: 16px;
+    color: #1aff6b;
+    border-bottom: 1px solid #1aff6b;
+    padding-bottom: 5px;
+}
+
+/* FULL WIDTH PANEL */
+.full {
+    grid-column: 1 / -1;
+}
+
+/* PROFILE LIST */
+.panel ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.panel ul li {
+    margin-bottom: 6px;
+}
+
+.panel ul li span {
+    color: #ffe66d;
+}
+
+/* IMAGE */
+.image-panel {
+    text-align: center;
+}
+
+.image-panel img {
+    width: 100%;
+    max-width: 220px;
+    filter: grayscale(60%) contrast(1.2);
+    border: 1px solid #1aff6b;
+}
+
+.caption {
+    font-size: 12px;
+    margin-top: 5px;
+    color: #aaa;
+}
+
+/* LOG STYLE */
+.log li {
+    color: #c0ffc9;
+}
+
+/* REDACTION */
+.redacted {
+    background: #000;
+    color: #000;
+    padding: 0 4px;
+}
+
+.redacted:hover {
+    background: transparent;
+    color: #ff5555;
+}
+
+/* FOOTER */
+.terminal-footer {
+    margin-top: 20px;
+    border-top: 1px solid #1aff6b;
+    padding-top: 10px;
+    text-align: center;
+    font-size: 13px;
+    color: #aaa;
+}
